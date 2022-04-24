@@ -4,8 +4,8 @@ public class Conta {
 	
 	private int agencia;
 	private int conta;
-	private double saldo;
-	private String titular;
+	protected double saldo;
+	private PessoaHeranca titular;
 	
 	
 	public Conta() {
@@ -15,7 +15,7 @@ public class Conta {
 	
 	
 	
-	public Conta(int agencia, int conta, String titular) {
+	public Conta(int agencia, int conta, PessoaHeranca titular) {
 		super();
 		this.agencia = agencia;
 		this.conta = conta;
@@ -33,7 +33,7 @@ public class Conta {
 	}
 	
 	public boolean sacar(double valor) {
-		if(saldo > 0 && saldo >= valor) {
+		if(valor > 0 && saldo >= valor) {
 			saldo -= valor;
 			return true;
 		}
@@ -66,10 +66,10 @@ public class Conta {
 	public double getSaldo() {
 		return saldo;
 	}
-	public String gettitular() {
+	public PessoaHeranca gettitular() {
 		return titular;
 	}
-	public void settitular(String titular) {
+	public void settitular(PessoaHeranca titular) {
 		this.titular = titular;
 	}
 	
